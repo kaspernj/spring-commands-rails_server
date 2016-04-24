@@ -14,8 +14,8 @@ require "rake"
 require "jeweler"
 Jeweler::Tasks.new do |gem|
   # gem is a Gem::Specification... see http://guides.rubygems.org/specification-reference/ for more options
-  gem.name = "spring-commands-server"
-  gem.homepage = "http://github.com/kaspernj/spring-commands-server"
+  gem.name = "spring-commands-rails_server"
+  gem.homepage = "http://github.com/kaspernj/spring-commands-rails_server"
   gem.license = "MIT"
   gem.summary = %(The Rails server command for Spring)
   gem.description = %(The Rails server command for Spring)
@@ -25,26 +25,4 @@ Jeweler::Tasks.new do |gem|
 end
 Jeweler::RubygemsDotOrgTasks.new
 
-require "rspec/core"
-require "rspec/core/rake_task"
-RSpec::Core::RakeTask.new(:spec) do |spec|
-  spec.pattern = FileList["spec/**/*_spec.rb"]
-end
-
-desc "Code coverage detail"
-task :simplecov do
-  ENV["COVERAGE"] = "true"
-  Rake::Task["spec"].execute
-end
-
 task default: :spec
-
-require "rdoc/task"
-Rake::RDocTask.new do |rdoc|
-  version = File.exist?("VERSION") ? File.read("VERSION") : ""
-
-  rdoc.rdoc_dir = "rdoc"
-  rdoc.title = "spring-commands-server #{version}"
-  rdoc.rdoc_files.include("README*")
-  rdoc.rdoc_files.include("lib/**/*.rb")
-end
