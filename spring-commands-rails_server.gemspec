@@ -22,13 +22,16 @@ Gem::Specification.new do |s|
     ".document",
     ".rspec",
     ".rubocop.yml",
+    ".shippable.yml",
     "Gemfile",
     "Gemfile.lock",
     "LICENSE.txt",
     "README.md",
     "Rakefile",
     "VERSION",
-    "lib/spring-commands-server.rb"
+    "lib/spring-commands-server.rb",
+    "lib/spring/commands/rails_server.rb",
+    "spring-commands-rails_server.gemspec"
   ]
   s.homepage = "http://github.com/kaspernj/spring-commands-rails_server"
   s.licenses = ["MIT"]
