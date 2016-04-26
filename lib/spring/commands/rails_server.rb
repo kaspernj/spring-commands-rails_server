@@ -1,6 +1,3 @@
-module Spring; end
-module Spring::Commands; end
-
 class Spring::Commands::RailsServer
   def env(*)
     "development"
