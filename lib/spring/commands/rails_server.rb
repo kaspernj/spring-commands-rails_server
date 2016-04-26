@@ -1,3 +1,5 @@
+require "spring"
+
 class Spring::Commands::RailsServer
   def env(*)
     "development"
