@@ -24,4 +24,4 @@ class Spring::Commands::RailsServer
   end
 end
 
-Spring.register_command "rails_server", Spring::Commands::RailsServer.new
+Spring.register_command("rails_server", Spring::Commands::RailsServer.new) if Spring.respond_to?(:register_command)
