@@ -1,2 +1,39 @@
-script:
-  - rubocop
+builds:
+  source_lint:
+    name: Ruby source lint
+    paths:
+      - "**"
+      - "!README.md"
+      - "!LICENSE.txt"
+      - "!VERSION"
+      - "!Gemfile"
+      - "!Gemfile.lock"
+      - "!Rakefile"
+      - "!spring-commands-rails_server.gemspec"
+      - "!peak_flow.yml"
+      - "!lib/**"
+      - "lib/**"
+      - ".rubocop.yml"
+      - "Gemfile"
+      - "Gemfile.lock"
+      - "Rakefile"
+      - "spring-commands-rails_server.gemspec"
+      - "peak_flow.yml"
+    script:
+      - bundle exec rubocop lib
+  package:
+    name: Gem package validation
+    paths:
+      - "**"
+      - "!README.md"
+      - "!LICENSE.txt"
+      - "!lib/**"
+      - "Gemfile"
+      - "Gemfile.lock"
+      - "Rakefile"
+      - "VERSION"
+      - "spring-commands-rails_server.gemspec"
+      - "peak_flow.yml"
+      - ".rubocop.yml"
+    script:
+      - bundle exec rake build
